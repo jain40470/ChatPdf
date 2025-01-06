@@ -89,7 +89,9 @@ def ask_question(user_question):
         
         best_context = context.similarity_search(user_question)
         chain = conversation_chain()  # initiaize an object and this chain contains loading of model to prompt
-        response = chain(
+        
+        with st.spinner('Loading...'):
+            response = chain(
             {"input_documents":best_context, "question": user_question}
             , return_only_outputs=True)
         
