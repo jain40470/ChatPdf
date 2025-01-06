@@ -95,7 +95,7 @@ def ask_question(user_question):
             {"input_documents":best_context, "question": user_question}
             , return_only_outputs=True)
         
-        st.write("Reply: ", response["output_text"])
+        st.write("Response ", response["output_text"])
 
         st.subheader("Portion of pdf relevant to answer")
 
